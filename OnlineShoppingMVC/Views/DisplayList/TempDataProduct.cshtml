@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "TempDataProduct";
+}
+
+<h2>TempData Product</h2>
+
+<table border="1">
+    <tr>
+        <td>Product Id</td>
+        <td>Product Name</td>
+        <td>Product Price</td>
+    </tr>
+
+    @foreach (OnlineShoppingMVC_Entity.ProductList item in (List<OnlineShoppingMVC_Entity.ProductList>)TempData["Product"])
+    {
+        <tr>
+            <td>@item.productId</td>
+            <td>@item.productName</td>
+            <td>@item.productPrice</td>
+        </tr>
+    }
+</table>
+
