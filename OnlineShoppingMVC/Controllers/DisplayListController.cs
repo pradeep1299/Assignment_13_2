@@ -20,28 +20,48 @@ namespace OnlineShoppingMVC.Controllers
         // GET: DisplayList
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult ViewDataProduct()
-        {
             IEnumerable<ProductList> product = getProduct.ReturnProductDetails();
-            ViewData["Product"] = product;
-            return View();
+            return View(product);
         }
-
-        public ActionResult ViewBagProduct()
-        {
-            IEnumerable<ProductList> product = getProduct.ReturnProductDetails();
-            ViewBag.Product = product;
-            return View();
-        }
-
         public ActionResult TempDataProduct()
         {
             IEnumerable<ProductList> product = getProduct.ReturnProductDetails();
             TempData["Product"] = product;
+            return RedirectToAction("TempDataProductRedirect");
+        }
+        public ActionResult TempDataProductRedirect()
+        {
             return View();
+        }
+        [HttpGet]
+        public ActionResult Add()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Add(ProductList ProductList)
+        {
+            getProduct.AddProduct(ProductList);
+            TempData["Message"] = "Product added Successfully";
+            return RedirectToAction("Index");
+        }
+        public ActionResult Edit(int id)
+        {
+            ProductList product = getProduct.GetProduct(id);
+            return View(product);
+        }
+        public ActionResult Delete(int id)
+        {
+            getProduct.DeleteProduct(id);
+            TempData["Message"] = "Package deleted";
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public ActionResult Update(ProductList ProductList)
+        {
+            getProduct.UpdatePackage(ProductList);
+            TempData["Message"] = "Package updated";
+            return RedirectToAction("Index");
         }
     }
 }

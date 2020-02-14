@@ -18,5 +18,25 @@ namespace OnlineShoppingMVC_DAL
         {
             return product;
         }
+        public void AddProduct(ProductList ProductList)
+        {
+            product.Add(ProductList);
+        }
+        public ProductList GetProduct(int productId)
+        {
+            return product.Find(id => id.productId == productId);
+        }
+        public void DeleteProduct(int productId)
+        {
+            ProductList list = GetProduct(productId);
+            if (list != null)
+                product.Remove(list);
+        }
+        public void UpdatePackage(ProductList ProductList)
+        {
+            ProductList packages = GetProduct(ProductList.productId);
+            packages.productName = ProductList.productName;
+            packages.productPrice = ProductList.productPrice;
+        }
     }
 }

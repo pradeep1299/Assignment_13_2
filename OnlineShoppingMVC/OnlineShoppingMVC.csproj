@@ -101,7 +101,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
-    <Content Include="Views\DisplayList\ViewBagProduct.cshtml" />
     <Content Include="Views\DisplayList\TempDataProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -117,11 +116,13 @@
     <Content Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\DisplayList\ViewDataProduct.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\DisplayList\Add.cshtml" />
+    <Content Include="Views\DisplayList\Edit.cshtml" />
+    <Content Include="Views\DisplayList\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

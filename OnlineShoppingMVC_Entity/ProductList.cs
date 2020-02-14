@@ -29,5 +29,6 @@ namespace OnlineShoppingMVC_Entity
             this.productName = name;
             this.productPrice = price;
         }
+        public ProductList() { }
     }
 }

@@ -1,0 +1,38 @@
+﻿@model OnlineShoppingMVC_Entity.ProductList
+
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add Product</h2>
+
+@using (Html.BeginForm("Add", "DisplayList", FormMethod.Post))
+{
+    <table cellpadding="10">
+        <tr>
+            <td>
+                @Html.Label("ProductId")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.productId)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.productName)</td>
+            <td>@Html.EditorFor(Model => Model.productName)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.productPrice)</td>
+            <td>@Html.EditorFor(Model => Model.productPrice)</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("Back", "Index")
+            </td>
+            <td>
+                <input type="submit" id="Add" />
+            </td>
+        </tr>
+    </table>
+}
+

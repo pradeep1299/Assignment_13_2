@@ -1,0 +1,38 @@
+﻿@model IEnumerable<OnlineShoppingMVC_Entity.ProductList>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Welcome</h2>
+
+@Html.ActionLink("Create New Package", "Add")<br />
+
+@if (TempData["Message"] != null)
+{
+    @Html.Label((string)TempData["Message"])
+}
+<h2>Package</h2>
+<table border="1">
+    <tr>
+        <td>Product Name</td>
+        <td>Product Price</td>
+        <td>Choice</td>
+    </tr>
+    @foreach (OnlineShoppingMVC_Entity.ProductList item in @Model)
+    {
+        <tr>
+            <td>
+                @item.productName
+            </td>
+            <td>
+                @item.productPrice
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.productId })
+                @Html.ActionLink("Delete", "Delete", new { id = item.productId })
+            </td>
+        </tr>
+    }
+</table>
+
