@@ -1,4 +1,4 @@
-﻿@model IEnumerable<OnlineShoppingMVC_Entity.ProductList>
+﻿@model IEnumerable<OnlineShoppingMVC_Entity.ProductDetails>
 
 @{
     ViewBag.Title = "Index";
@@ -6,20 +6,20 @@
 
 <h2>Welcome</h2>
 
-@Html.ActionLink("Create New Package", "Add")<br />
+@Html.ActionLink("Add New Product", "Add")<br />
 
 @if (TempData["Message"] != null)
 {
     @Html.Label((string)TempData["Message"])
 }
-<h2>Package</h2>
+<h2>Product</h2>
 <table border="1">
     <tr>
         <td>Product Name</td>
         <td>Product Price</td>
         <td>Choice</td>
     </tr>
-    @foreach (OnlineShoppingMVC_Entity.ProductList item in @Model)
+    @foreach (OnlineShoppingMVC_Entity.ProductDetails item in @Model)
     {
         <tr>
             <td>

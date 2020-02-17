@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnlineShoppingMVC_Entity
 {
-    public class ProductList
+    public class ProductDetails
     {
         public int productId
         {
@@ -23,12 +23,12 @@ namespace OnlineShoppingMVC_Entity
             get;
             set;
         }
-        public ProductList(int id, string name, double price)
+        public ProductDetails(int id, string name, double price)
         {
             this.productId = id;
             this.productName = name;
             this.productPrice = price;
         }
-        public ProductList() { }
+        public ProductDetails() { }
     }
 }

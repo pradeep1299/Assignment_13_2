@@ -1,4 +1,4 @@
-﻿@model OnlineShoppingMVC_Entity.ProductList
+﻿@model OnlineShoppingMVC_Entity.ProductDetails
 
 @{
     ViewBag.Title = "Add";
@@ -14,16 +14,18 @@
                 @Html.Label("ProductId")
             </td>
             <td>
-                @Html.TextBoxFor(Model => Model.productId)
+                @Html.TextBox("productId")
             </td>
         </tr>
         <tr>
             <td>@Html.LabelFor(Model => Model.productName)</td>
-            <td>@Html.EditorFor(Model => Model.productName)</td>
+            <td>@Html.TextBox("productName")
+            </td>
         </tr>
         <tr>
             <td>@Html.LabelFor(Model => Model.productPrice)</td>
-            <td>@Html.EditorFor(Model => Model.productPrice)</td>
+            <td>@Html.TextBox("productPrice")
+            </td>
         </tr>
         <tr>
             <td>

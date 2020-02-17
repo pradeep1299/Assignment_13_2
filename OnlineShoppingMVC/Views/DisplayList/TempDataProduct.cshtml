@@ -12,7 +12,7 @@
         <td>Product Price</td>
     </tr>
 
-    @foreach (OnlineShoppingMVC_Entity.ProductList item in (List<OnlineShoppingMVC_Entity.ProductList>)TempData["Product"])
+    @foreach (OnlineShoppingMVC_Entity.ProductDetails item in (List<OnlineShoppingMVC_Entity.ProductDetails>)TempData["Product"])
     {
         <tr>
             <td>@item.productId</td>
@@ -21,4 +21,3 @@
         </tr>
     }
 </table>
-
