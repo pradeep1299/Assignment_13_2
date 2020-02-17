@@ -32,6 +32,7 @@ namespace OnlineShoppingMVC.Controllers
         public ActionResult TempDataProductRedirect()
         {
             return View();
+
         }
         [HttpGet]
         public ActionResult Add()
